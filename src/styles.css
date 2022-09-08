@@ -1,0 +1,15 @@
+.App {
+  padding: 30px;
+  font-family: sans-serif;
+  text-align: center;
+}
+
+.Popin {
+  padding: 20px;
+  position: absolute;
+  background-color: white;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
