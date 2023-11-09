@@ -1,18 +1,33 @@
-import React from "react";
+import React, {useState, useRef} from "react";
 
 import "./styles.css";
-import { Comments } from "./Comments";
+import {Comments} from "./Comments";
+import {Popin} from "./Popin.tsx";
 
-export class App extends React.Component {
-  render() {
+export function App() {
+    const [isPopinVisible, setIsPopinVisible] = useState(false)
+    const [name, setName] = useState("")
+
     return (
-      <div className="App">
-        <h1>Priez pour vos ami(e)s !</h1>
-        <input type="text" placeholder="Nom de votre ami(e)" />
-        &nbsp;
-        <button>Prier</button>
-        <Comments />
-      </div>
+        <div className="App">
+            <div className="blur">
+                <h1>Priez pour vos ami(e)s !</h1>
+                <div className="name-container">
+                    <input
+                        type="text"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        placeholder="Nom de votre ami(e)"
+                    />
+                    <button onClick={() => setIsPopinVisible(true)}>Prier</button>
+                </div>
+
+                {isPopinVisible &&
+                    <Popin name={name} setVisibility={() => setIsPopinVisible(false)}/>
+                }
+
+                <Comments/>
+            </div>
+        </div>
     );
-  }
 }

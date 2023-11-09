@@ -1,15 +1,114 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
 .App {
-  padding: 30px;
   font-family: sans-serif;
   text-align: center;
+  background-image: url("assets/background.jpg");
+  background-size: cover;
+  height: 100vh;
+}
+
+.App h1 {
+  padding: 80px 0;
+  font-size: 4em;
+  font-family: Georgia, Times New Roman, Times, serif;
+}
+
+.name-container,
+.comment-container {
+  width: 300px;
+  margin: auto;
+}
+
+.name-container {
+  margin-bottom: 50px;
+}
+
+input {
+  width: 100%;
+  padding: 10px 0;
+  font-size: 16px;
+  color: black;
+  margin-bottom: 16px;
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  background: transparent;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.blur {
+  background: rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(4px);
+  height: 100vh;
+}
+
+h1 {
+  margin: 0
 }
 
 .Popin {
-  padding: 20px;
+  margin: auto;
+  padding: 50px;
   position: absolute;
-  background-color: white;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
+  border-radius: 20px;
+  color: white;
+  background-color: black;
+  height: 500px;
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  z-index: 1;
+}
+
+.Popin h2 span {
+  color: #f67c44;
+}
+
+button {
+  padding: 8px 24px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid black;
+}
+
+button:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+button.button-black {
+  border-color: white;
+  color: white;
+}
+
+button.button-black:hover:not(:disabled) {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+button:disabled {
+  opacity: 0.3;
+}
+
+ul {
+  width: 600px;
+  margin: auto;
+}
+
+li {
+  list-style-type: none;
+  border-radius: 4px;
+  background-color: white;
+  padding: 8px;
+  margin: 12px;
+  font-family: Georgia, Times New Roman, Times, serif;
+  font-style: italic;
 }
